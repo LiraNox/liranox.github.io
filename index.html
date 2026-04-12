@@ -5,20 +5,16 @@
 <title>Lira Nox</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- 🔥 GOOGLE ANALYTICS -->
+<!-- GOOGLE ANALYTICS -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C51WPZLR62"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-C51WPZLR62');
 </script>
 
 <style>
-/* =========================
-   RESET
-========================= */
 body {
   margin: 0;
   background: #0a0a0a;
@@ -27,9 +23,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* =========================
-   HEADER
-========================= */
 .site-header {
   position: absolute;
   top: 0;
@@ -58,9 +51,6 @@ body {
   opacity: 0.6;
 }
 
-/* =========================
-   HERO
-========================= */
 .hero {
   min-height: 86vh;
   padding: 80px 120px 10px;
@@ -98,9 +88,6 @@ body {
   opacity: 0.55;
 }
 
-/* =========================
-   HERO IMAGE
-========================= */
 .hero-image {
   display: flex;
   justify-content: flex-end;
@@ -114,9 +101,6 @@ body {
   filter: grayscale(100%) contrast(105%);
 }
 
-/* =========================
-   ACTION
-========================= */
 .action {
   padding: 40px 120px 100px;
 }
@@ -156,14 +140,10 @@ body {
   opacity: 0.55;
 }
 
-/* Fanvue subtil stärker */
 .action-item.highlight strong {
   color: #c0392b;
 }
 
-/* =========================
-   COLLAB
-========================= */
 .collab {
   padding: 60px 120px 120px;
   margin-top: -70px;
@@ -214,9 +194,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* =========================
-   MOBILE
-========================= */
 @media (max-width: 900px) {
 
   .nav {
@@ -225,7 +202,6 @@ body {
 
   .hero {
     padding: 80px 28px 20px;
-    min-height: unset;
   }
 
   .hero-inner {
@@ -261,7 +237,6 @@ body {
 
   .collab {
     padding: 80px 28px 100px;
-    margin-top: -40px;
   }
 }
 </style>
@@ -314,7 +289,11 @@ body {
       <strong>Telegram</strong>
     </a>
 
-    <a href="https://fanvue.com/nox.lira" target="_blank" class="action-item highlight">
+    <a href="https://fanvue.com/nox.lira" target="_blank" class="action-item highlight"
+    onclick="gtag('event', 'fanvue_click', {
+      'event_category': 'engagement',
+      'event_label': 'fanvue_main'
+    });">
       <span>Enter the private</span>
       <strong>Fanvue</strong>
     </a>
