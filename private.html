@@ -39,6 +39,35 @@ body {
 }
 
 /* =========================
+   PRIVATE CHAT BUTTON (PERFECT ALIGNMENT)
+========================= */
+.private-chat {
+  position: absolute;
+  bottom: 70px;
+  right: 120px; /* exakt gleiche Linie wie NAV */
+  z-index: 11;
+}
+
+.private-chat a {
+  text-decoration: none;
+  font-size: 0.68rem;
+  letter-spacing: 0.35em;
+  padding: 10px 18px;
+  color: #ffffff;
+  background: rgba(0,0,0,0.75);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+  transition: all 0.35s ease;
+}
+
+/* Premium Hover */
+.private-chat a:hover {
+  background: #111;
+  border-color: rgba(255,255,255,0.3);
+  letter-spacing: 0.4em;
+}
+
+/* =========================
    HERO
 ========================= */
 .private-hero {
@@ -68,7 +97,6 @@ body {
   max-width: 600px;
 }
 
-/* HEADLINE (IDENTISCH!) */
 .overlay h1 {
   font-size: 1.8rem;
   letter-spacing: 0.5em;
@@ -76,14 +104,12 @@ body {
   margin-bottom: 26px;
 }
 
-/* TEXT */
 .overlay p {
   font-size: 0.95rem;
   line-height: 1.8;
   opacity: 0.85;
 }
 
-/* DIVIDER */
 .divider {
   width: 70px;
   height: 1px;
@@ -91,7 +117,6 @@ body {
   margin: 45px auto;
 }
 
-/* CTA (FEIN VERSTÄRKT) */
 .cta {
   display: inline-block;
   font-size: 1.05rem;
@@ -104,31 +129,6 @@ body {
 .cta:hover {
   opacity: 0.7;
   letter-spacing: 0.42em;
-}
-
-/* LOCKED TEXT (FIXED POSITION + KONTRAST) */
-.locked {
-  margin-top: 22px;
-  font-size: 0.72rem;
-  letter-spacing: 0.4em;
-  color: rgba(0,0,0,0.65);
-}
-
-/* 🔥 NEU: TELEGRAM LINK (GLEICHER STIL) */
-.telegram {
-  margin-top: 28px;
-  font-size: 0.7rem;
-  letter-spacing: 0.35em;
-  opacity: 0.45;
-}
-
-.telegram a {
-  color: #f2f2f2;
-  text-decoration: none;
-}
-
-.telegram a:hover {
-  opacity: 0.7;
 }
 
 /* =========================
@@ -147,6 +147,12 @@ body {
   .overlay p {
     font-size: 0.85rem;
   }
+
+  .private-chat {
+    bottom: 30px;
+    right: 28px; /* angepasst für mobile */
+  }
+
 }
 
 </style>
@@ -158,6 +164,13 @@ body {
 <div class="nav">
   <a href="index.html">HOME</a>
   <a href="editorial.html">EDITORIAL</a>
+</div>
+
+<!-- PRIVATE CHAT BUTTON -->
+<div class="private-chat">
+  <a href="https://t.me/Lira_Nox_Official" target="_blank">
+    PRIVATE CHAT REQUEST
+  </a>
 </div>
 
 <!-- HERO -->
@@ -180,19 +193,12 @@ body {
       ENTER FANVUE
     </a>
 
-    <div class="locked">
-      restricted access
-    </div>
-
-    <!-- 🔥 NEU: PRIVATE CHAT -->
-    <div class="telegram">
-      <a href="https://t.me/liranox" target="_blank">
-        private conversation
-      </a>
-    </div>
-
   </div>
 
+</section>
+
+</body>
+</html>
 </section>
 
 </body>
