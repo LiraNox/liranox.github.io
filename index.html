@@ -372,7 +372,7 @@ body {
     <a href="https://t.me/nox_lira" target="_blank" class="popup-btn"
     onclick="gtag('event', 'telegram_popup_click', {
       'event_category': 'engagement',
-      'event_label': 'popup_mobile'
+      'event_label': 'popup_all'
     });">
       ENTER PRIVATE CHANNEL
     </a>
@@ -384,11 +384,15 @@ function isMobile() {
   return /Mobi|Android/i.test(navigator.userAgent);
 }
 
-setTimeout(function() {
-  if (isMobile()) {
+if (isMobile()) {
+  setTimeout(function() {
     document.getElementById("telegramPopup").style.display = "flex";
-  }
-}, 2000);
+  }, 2000);
+} else {
+  setTimeout(function() {
+    document.getElementById("telegramPopup").style.display = "flex";
+  }, 5000);
+}
 </script>
 
 </body>
