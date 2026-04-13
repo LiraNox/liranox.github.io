@@ -194,6 +194,50 @@ body {
   transform: translateY(-2px);
 }
 
+/* POPUP */
+.popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(10,10,10,0.96);
+  backdrop-filter: blur(12px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 20px;
+  z-index: 999;
+}
+
+.popup-content {
+  text-align: center;
+  max-width: 320px;
+}
+
+.popup-content p {
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.popup-btn {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  padding: 12px 20px;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.popup-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
 @media (max-width: 900px) {
 
   .nav {
@@ -316,6 +360,36 @@ body {
 
   </div>
 </section>
+
+<!-- POPUP -->
+<div id="telegramPopup" class="popup">
+  <div class="popup-content">
+    <p>
+      There’s more.<br>
+      Just not here.
+    </p>
+
+    <a href="https://t.me/nox_lira" target="_blank" class="popup-btn"
+    onclick="gtag('event', 'telegram_popup_click', {
+      'event_category': 'engagement',
+      'event_label': 'popup_mobile'
+    });">
+      ENTER PRIVATE CHANNEL
+    </a>
+  </div>
+</div>
+
+<script>
+function isMobile() {
+  return /Mobi|Android/i.test(navigator.userAgent);
+}
+
+setTimeout(function() {
+  if (isMobile()) {
+    document.getElementById("telegramPopup").style.display = "flex";
+  }
+}, 2000);
+</script>
 
 </body>
 </html>
