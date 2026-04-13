@@ -197,29 +197,42 @@ body {
 /* POPUP */
 .popup {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 360px;
+  width: calc(100% - 40px);
   background: rgba(10,10,10,0.96);
   backdrop-filter: blur(12px);
   display: none;
-  justify-content: center;
-  align-items: center;
-  padding: 32px 20px;
+  padding: 26px 22px;
   z-index: 999;
+  border: 1px solid rgba(255,255,255,0.12);
 }
 
 .popup-content {
   text-align: center;
-  max-width: 320px;
+  position: relative;
+}
+
+.popup-close {
+  position: absolute;
+  top: -10px;
+  right: -6px;
+  font-size: 18px;
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+}
+
+.popup-close:hover {
+  color: #fff;
 }
 
 .popup-content p {
   font-size: 0.85rem;
   letter-spacing: 0.18em;
   line-height: 1.6;
-  margin-bottom: 20px;
-  opacity: 0.9;
+  margin-bottom: 18px;
 }
 
 .popup-btn {
@@ -227,61 +240,14 @@ body {
   text-decoration: none;
   font-size: 0.75rem;
   letter-spacing: 0.35em;
-  padding: 12px 20px;
+  padding: 12px 18px;
   border: 1px solid rgba(255,255,255,0.25);
   color: #fff;
-  transition: all 0.3s ease;
 }
 
 .popup-btn:hover {
   background: #fff;
   color: #000;
-}
-
-@media (max-width: 900px) {
-
-  .nav {
-    padding: 20px 28px 0;
-  }
-
-  .hero {
-    padding: 80px 28px 20px;
-  }
-
-  .hero-inner {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-  .hero-text {
-    text-align: center;
-  }
-
-  .hero-text h1 {
-    font-size: 2rem;
-    letter-spacing: 0.4em;
-  }
-
-  .hero-image {
-    justify-content: center;
-  }
-
-  .hero-image img {
-    max-width: 85%;
-  }
-
-  .action {
-    padding: 50px 28px 80px;
-  }
-
-  .action-inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .collab {
-    padding: 80px 28px 100px;
-  }
 }
 </style>
 </head>
@@ -300,12 +266,10 @@ body {
 
     <div class="hero-text">
       <h1>LIRA NOX</h1>
-
       <p class="lead">
         A digital fashion model<br>
         crafted for visual impact.
       </p>
-
       <p class="values">
         Luxury aesthetics.<br>
         Editorial presence.<br>
@@ -347,28 +311,22 @@ body {
 
 <section class="collab">
   <div class="collab-inner">
-
     <div class="collab-lines"></div>
-
-    <p class="collab-text">
-      FOR CURATED COLLABORATIONS
-    </p>
-
+    <p class="collab-text">FOR CURATED COLLABORATIONS</p>
     <a href="mailto:lira.nox@outlook.com" class="collab-mail">
       lira.nox@outlook.com
     </a>
-
   </div>
 </section>
 
 <!-- POPUP -->
 <div id="telegramPopup" class="popup">
   <div class="popup-content">
+    <span class="popup-close" onclick="closePopup()">×</span>
     <p>
       There’s more.<br>
       Just not here.
     </p>
-
     <a href="https://t.me/nox_lira" target="_blank" class="popup-btn"
     onclick="gtag('event', 'telegram_popup_click', {
       'event_category': 'engagement',
@@ -384,14 +342,21 @@ function isMobile() {
   return /Mobi|Android/i.test(navigator.userAgent);
 }
 
-if (isMobile()) {
-  setTimeout(function() {
-    document.getElementById("telegramPopup").style.display = "flex";
-  }, 2000);
-} else {
-  setTimeout(function() {
-    document.getElementById("telegramPopup").style.display = "flex";
-  }, 5000);
+function closePopup() {
+  document.getElementById("telegramPopup").style.display = "none";
+  sessionStorage.setItem("popupClosed", "true");
+}
+
+if (!sessionStorage.getItem("popupClosed")) {
+  if (isMobile()) {
+    setTimeout(() => {
+      document.getElementById("telegramPopup").style.display = "block";
+    }, 2000);
+  } else {
+    setTimeout(() => {
+      document.getElementById("telegramPopup").style.display = "block";
+    }, 5000);
+  }
 }
 </script>
 
