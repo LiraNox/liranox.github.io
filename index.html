@@ -20,26 +20,18 @@ body {
   background: #0a0a0a;
   color: #f2f2f2;
   font-family: Georgia, serif;
-  -webkit-font-smoothing: antialiased;
 }
 
-.site-header {
+/* NAV */
+.nav {
   position: absolute;
   top: 0;
-  width: 100%;
-  z-index: 10;
-}
-
-.nav {
-  max-width: 1400px;
-  margin: 0 auto;
+  right: 0;
   padding: 32px 120px 0;
   display: flex;
-  justify-content: flex-end;
   gap: 36px;
   font-size: 0.72rem;
   letter-spacing: 0.35em;
-  opacity: 0.85;
 }
 
 .nav a {
@@ -47,239 +39,115 @@ body {
   text-decoration: none;
 }
 
-.nav a:hover {
-  opacity: 0.6;
-}
-
+/* HERO */
 .hero {
-  min-height: 86vh;
-  padding: 80px 120px 10px;
+  min-height: 100vh;
   display: flex;
   align-items: center;
+  padding: 80px 120px;
 }
 
 .hero-inner {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1.25fr;
-  gap: 90px;
-  align-items: center;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  width: 100%;
 }
 
 .hero-text h1 {
   font-size: 2.5rem;
-  letter-spacing: 0.48em;
-  font-weight: 400;
-  margin-bottom: 44px;
-}
-
-.hero-text .lead {
-  font-size: 0.95rem;
-  line-height: 1.8;
-  margin-bottom: 30px;
-  opacity: 0.85;
-}
-
-.hero-text .values {
-  font-size: 0.9rem;
-  line-height: 1.9;
-  opacity: 0.55;
-}
-
-.hero-image {
-  display: flex;
-  justify-content: flex-end;
+  letter-spacing: 0.5em;
 }
 
 .hero-image img {
   width: 100%;
-  max-width: 88%;
-  height: auto;
-  display: block;
-  filter: grayscale(100%) contrast(105%);
+  max-width: 90%;
+  filter: grayscale(100%);
 }
 
+/* ACTION */
 .action {
-  padding: 40px 120px 100px;
+  padding: 60px 120px;
 }
 
 .action-inner {
-  max-width: 1400px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 70px;
+  grid-template-columns: repeat(3,1fr);
+  gap: 60px;
 }
 
 .action-item {
+  color: white;
   text-decoration: none;
-  color: #f2f2f2;
-  display: block;
-  border-top: 1px solid rgba(255,255,255,0.12);
-  padding-top: 22px;
-  transition: all 0.3s ease;
 }
 
-.action-item span {
-  display: block;
-  font-size: 0.7rem;
-  letter-spacing: 0.3em;
-  opacity: 0.45;
-  margin-bottom: 12px;
-}
-
-.action-item strong {
-  font-size: 1.05rem;
-  letter-spacing: 0.22em;
-  font-weight: 400;
-}
-
-.action-item:hover {
-  opacity: 0.55;
-}
-
-.action-item.highlight strong {
-  color: #c0392b;
-}
-
-.collab {
-  padding: 60px 120px 120px;
-  margin-top: -70px;
-}
-
-.collab-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.collab-lines {
-  width: 140px;
-  height: 1px;
-  background: rgba(255,255,255,0.12);
-  margin: 0 auto 44px;
-  position: relative;
-}
-
-.collab-lines::after {
-  content: "";
-  width: 70px;
-  height: 1px;
-  background: rgba(255,255,255,0.25);
-  position: absolute;
-  top: 6px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.collab-text {
-  font-size: 0.7rem;
-  letter-spacing: 0.4em;
-  opacity: 0.35;
-  margin-bottom: 22px;
-}
-
-.collab-mail {
-  text-decoration: none;
-  color: #f2f2f2;
-  font-size: 1rem;
-  letter-spacing: 0.28em;
-  transition: all 0.3s ease;
-}
-
-.collab-mail:hover {
-  opacity: 0.6;
-  transform: translateY(-2px);
-}
-
-/* POPUP */
+/* POPUP (FIXED) */
 .popup {
   position: fixed;
-  bottom: 40px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  max-width: 360px;
-  width: calc(100% - 40px);
-  background: rgba(10,10,10,0.96);
-  backdrop-filter: blur(12px);
+  transform: translate(-50%, -50%);
+  background: rgba(10,10,10,0.98);
+  padding: 30px;
   display: none;
-  padding: 26px 22px;
   z-index: 999;
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.15);
+  max-width: 320px;
+  width: 90%;
 }
 
 .popup-content {
-  text-align: center;
   position: relative;
+  text-align: center;
 }
 
 .popup-close {
   position: absolute;
   top: -10px;
-  right: -6px;
-  font-size: 18px;
-  color: rgba(255,255,255,0.6);
+  right: -10px;
+  font-size: 20px;
   cursor: pointer;
-}
-
-.popup-close:hover {
-  color: #fff;
-}
-
-.popup-content p {
-  font-size: 0.85rem;
-  letter-spacing: 0.18em;
-  line-height: 1.6;
-  margin-bottom: 18px;
 }
 
 .popup-btn {
   display: inline-block;
+  margin-top: 20px;
+  padding: 10px 18px;
+  border: 1px solid white;
   text-decoration: none;
-  font-size: 0.75rem;
-  letter-spacing: 0.35em;
-  padding: 12px 18px;
-  border: 1px solid rgba(255,255,255,0.25);
-  color: #fff;
+  color: white;
 }
 
-.popup-btn:hover {
-  background: #fff;
-  color: #000;
+/* MOBILE */
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image {
+    text-align: center;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header class="site-header">
-  <nav class="nav">
-    <a href="editorial.html">EDITORIAL</a>
-    <a href="private.html">PRIVATE</a>
-  </nav>
-</header>
+<div class="nav">
+  <a href="editorial.html">EDITORIAL</a>
+  <a href="private.html">PRIVATE</a>
+</div>
 
 <section class="hero">
   <div class="hero-inner">
 
     <div class="hero-text">
       <h1>LIRA NOX</h1>
-      <p class="lead">
-        A digital fashion model<br>
-        crafted for visual impact.
-      </p>
-      <p class="values">
-        Luxury aesthetics.<br>
-        Editorial presence.<br>
-        Controlled desire.
-      </p>
     </div>
 
     <div class="hero-image">
-      <!-- FIXED IMAGE PATH -->
-      <img src="/images/hero.jpg" alt="Lira Nox">
+      <!-- FIX: RELATIVE PATH -->
+      <img src="images/hero.jpg" alt="Lira Nox">
     </div>
 
   </div>
@@ -288,35 +156,15 @@ body {
 <section class="action">
   <div class="action-inner">
 
-    <a href="https://instagram.com/nox.lira" target="_blank" class="action-item">
-      <span>Follow the narrative</span>
-      <strong>Instagram</strong>
+    <a href="https://instagram.com/nox.lira" target="_blank" class="action-item">Instagram</a>
+
+    <a href="https://t.me/nox_lira" target="_blank" class="action-item">Telegram</a>
+
+    <a href="https://fanvue.com/nox.lira" target="_blank" class="action-item"
+    onclick="gtag('event','fanvue_click',{event_label:'fanvue_main'});">
+      Fanvue
     </a>
 
-    <a href="https://t.me/nox_lira" target="_blank" class="action-item">
-      <span>Not everything is public</span>
-      <strong>Telegram</strong>
-    </a>
-
-    <a href="https://fanvue.com/nox.lira" target="_blank" class="action-item highlight"
-    onclick="gtag('event', 'fanvue_click', {
-      'event_category': 'engagement',
-      'event_label': 'fanvue_main'
-    });">
-      <span>Enter the private</span>
-      <strong>Fanvue</strong>
-    </a>
-
-  </div>
-</section>
-
-<section class="collab">
-  <div class="collab-inner">
-    <div class="collab-lines"></div>
-    <p class="collab-text">FOR CURATED COLLABORATIONS</p>
-    <a href="mailto:lira.nox@outlook.com" class="collab-mail">
-      lira.nox@outlook.com
-    </a>
   </div>
 </section>
 
@@ -324,41 +172,30 @@ body {
 <div id="telegramPopup" class="popup">
   <div class="popup-content">
     <span class="popup-close" onclick="closePopup()">×</span>
+
     <p>
       There’s more.<br>
       Just not here.
     </p>
-    <a href="https://t.me/nox_lira" target="_blank" class="popup-btn"
-    onclick="gtag('event', 'telegram_popup_click', {
-      'event_category': 'engagement',
-      'event_label': 'popup_all'
-    });">
+
+    <a href="https://t.me/nox_lira" target="_blank" class="popup-btn">
       ENTER PRIVATE CHANNEL
     </a>
   </div>
 </div>
 
 <script>
-function isMobile() {
+function isMobile(){
   return /Mobi|Android/i.test(navigator.userAgent);
 }
 
-function closePopup() {
+function closePopup(){
   document.getElementById("telegramPopup").style.display = "none";
-  sessionStorage.setItem("popupClosed", "true");
 }
 
-if (!sessionStorage.getItem("popupClosed")) {
-  if (isMobile()) {
-    setTimeout(() => {
-      document.getElementById("telegramPopup").style.display = "block";
-    }, 2000);
-  } else {
-    setTimeout(() => {
-      document.getElementById("telegramPopup").style.display = "block";
-    }, 5000);
-  }
-}
+setTimeout(function(){
+  document.getElementById("telegramPopup").style.display = "block";
+}, isMobile()?2000:5000);
 </script>
 
 </body>
