@@ -194,10 +194,10 @@ body {
   transform: translateY(-2px);
 }
 
-/* POPUP FIX */
+/* POPUP */
 .popup {
   position: fixed;
-  bottom: 60px; /* 👈 nicht mehr ganz unten */
+  bottom: 60px;
   left: 50%;
   transform: translateX(-50%);
   width: auto;
@@ -253,56 +253,6 @@ body {
   background: #fff;
   color: #000;
 }
-
-@media (max-width: 900px) {
-
-  .nav {
-    padding: 20px 28px 0;
-  }
-
-  .hero {
-    padding: 80px 28px 20px;
-  }
-
-  .hero-inner {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-  .hero-text {
-    text-align: center;
-  }
-
-  .hero-text h1 {
-    font-size: 2rem;
-    letter-spacing: 0.4em;
-  }
-
-  .hero-image {
-    justify-content: center;
-  }
-
-  .hero-image img {
-    max-width: 85%;
-  }
-
-  .action {
-    padding: 50px 28px 80px;
-  }
-
-  .action-inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .collab {
-    padding: 80px 28px 100px;
-  }
-
-  .popup {
-    bottom: 30px;
-  }
-}
 </style>
 </head>
 
@@ -348,16 +298,7 @@ body {
       <strong>Instagram</strong>
     </a>
 
-    <a href="https://t.me/nox_lira" target="_blank" class="action-item">
-      <span>Not everything is public</span>
-      <strong>Telegram</strong>
-    </a>
-
-    <a href="https://fanvue.com/nox.lira" target="_blank" class="action-item highlight"
-    onclick="gtag('event', 'fanvue_click', {
-      'event_category': 'engagement',
-      'event_label': 'fanvue_main'
-    });">
+    <a href="https://fanvue.com/nox.lira" target="_blank" class="action-item highlight">
       <span>Enter the private</span>
       <strong>Fanvue</strong>
     </a>
@@ -392,8 +333,8 @@ body {
       Just not here.
     </p>
 
-    <a href="https://t.me/nox_lira" target="_blank" class="popup-btn">
-      ENTER PRIVATE CHANNEL
+    <a href="https://fanvue.com/nox.lira" target="_blank" class="popup-btn">
+      ENTER PRIVATE
     </a>
 
   </div>
@@ -408,15 +349,9 @@ function closePopup() {
   document.getElementById("telegramPopup").style.display = "none";
 }
 
-if (isMobile()) {
-  setTimeout(function() {
-    document.getElementById("telegramPopup").style.display = "flex";
-  }, 2000);
-} else {
-  setTimeout(function() {
-    document.getElementById("telegramPopup").style.display = "flex";
-  }, 5000);
-}
+setTimeout(function() {
+  document.getElementById("telegramPopup").style.display = "flex";
+}, 3000);
 </script>
 
 </body>
