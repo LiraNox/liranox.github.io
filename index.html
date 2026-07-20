@@ -28,28 +28,28 @@ body{background:#f5f0e8;color:#0d0d0d;font-family:'Montserrat',sans-serif;-webki
 .banner-18{background:#c0392b;padding:0 22px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#fff;letter-spacing:0.08em;flex-shrink:0;}
 
 /* ── HERO ── */
-.hero{display:grid;grid-template-columns:1.1fr 1fr;min-height:88vh;}
+.hero{display:grid;grid-template-columns:1fr 1fr;height:calc(100vh - 69px);}
 
 /* LEFT */
-.hero-l{display:flex;flex-direction:column;justify-content:space-between;padding:36px 48px;border-right:0.5px solid #e0dbd2;}
+.hero-l{display:flex;flex-direction:column;justify-content:space-between;padding:28px 40px;border-right:0.5px solid #e0dbd2;overflow:hidden;}
 
-.name{font-size:clamp(72px,10vw,140px);font-weight:900;color:#0d0d0d;line-height:0.82;letter-spacing:-0.03em;opacity:0;animation:fadeUp 0.7s 0.2s ease forwards;}
+.name{font-size:clamp(60px,8vw,120px);font-weight:900;color:#0d0d0d;line-height:0.85;letter-spacing:-0.03em;opacity:0;animation:fadeUp 0.7s 0.2s ease forwards;}
 
-.quote{font-size:13px;color:#888;font-style:italic;line-height:1.7;margin-top:20px;padding-left:14px;border-left:2px solid #c0392b;opacity:0;animation:fadeUp 0.6s 0.6s ease forwards;}
+.quote{font-size:12px;color:#888;font-style:italic;line-height:1.65;margin-top:14px;padding-left:12px;border-left:2px solid #c0392b;opacity:0;animation:fadeUp 0.6s 0.6s ease forwards;}
 
-.platforms{display:flex;flex-direction:column;gap:0;margin-top:32px;opacity:0;animation:fadeUp 0.6s 0.8s ease forwards;}
-.plat-link{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-top:0.5px solid #e0dbd2;font-size:8px;letter-spacing:0.45em;color:#bbb;text-decoration:none;transition:color 0.3s;}
+.platforms{display:flex;flex-direction:column;gap:0;opacity:0;animation:fadeUp 0.6s 0.8s ease forwards;}
+.plat-link{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-top:0.5px solid #e0dbd2;font-size:8px;letter-spacing:0.45em;color:#bbb;text-decoration:none;transition:color 0.3s;}
 .plat-link:hover{color:#0d0d0d;}
 .plat-link .arr{color:#0d0d0d;font-size:14px;transition:transform 0.3s;}
 .plat-link:hover .arr{transform:translateX(4px);}
 
-.cta-wrap{margin-top:20px;opacity:0;animation:fadeUp 0.6s 1.0s ease forwards;}
-.cta-btn{display:block;background:#0d0d0d;color:#fff;font-size:10px;letter-spacing:0.5em;padding:16px 22px;font-weight:700;text-decoration:none;text-align:center;position:relative;overflow:hidden;transition:letter-spacing 0.4s;}
+.cta-wrap{margin-top:14px;opacity:0;animation:fadeUp 0.6s 1.0s ease forwards;}
+.cta-btn{display:block;background:#0d0d0d;color:#fff;font-size:10px;letter-spacing:0.5em;padding:14px 22px;font-weight:700;text-decoration:none;text-align:center;position:relative;overflow:hidden;transition:letter-spacing 0.4s;}
 .cta-btn::before{content:'';position:absolute;inset:0;background:#c0392b;transform:translateX(-101%);transition:transform 0.45s ease;}
 .cta-btn:hover::before{transform:translateX(0);}
 .cta-btn:hover{letter-spacing:0.6em;}
 .cta-btn-inner{position:relative;z-index:1;}
-.cta-sub{font-size:7px;letter-spacing:0.3em;color:#bbb;text-align:center;margin-top:8px;font-weight:300;}
+.cta-sub{font-size:7px;letter-spacing:0.3em;color:#bbb;text-align:center;margin-top:6px;font-weight:300;}
 
 /* RIGHT — photo */
 .hero-r{position:relative;overflow:hidden;background:#111;}
@@ -68,14 +68,16 @@ body{background:#f5f0e8;color:#0d0d0d;font-family:'Montserrat',sans-serif;-webki
 
 /* ── MOBILE ── */
 @media(max-width:768px){
-  .banner-main{padding:12px 20px;}
-  .banner-line{font-size:16px;}
-  .banner-18{padding:0 14px;font-size:12px;}
-  .hero{grid-template-columns:1fr;min-height:auto;}
-  .hero-l{padding:28px 20px;border-right:none;}
-  .name{font-size:clamp(64px,18vw,90px);}
-  .hero-r{height:70vw;}
+  .banner-main{padding:11px 18px;}
+  .banner-line{font-size:15px;}
+  .banner-18{padding:0 14px;font-size:11px;}
+  .hero{grid-template-columns:1fr;height:auto;}
+  .hero-l{padding:22px 20px;border-right:none;border-bottom:0.5px solid #e0dbd2;}
+  .name{font-size:clamp(58px,17vw,80px);}
+  .hero-r{height:72vw;}
   .hero-r-fade{display:none;}
+  .plat-link{padding:10px 0;}
+  .cta-btn{padding:14px;}
 }
 </style>
 </head>
