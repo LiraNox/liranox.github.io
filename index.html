@@ -31,11 +31,11 @@ body{background:#f5f0e8;color:#0d0d0d;font-family:'Montserrat',sans-serif;-webki
 .hero{display:grid;grid-template-columns:1fr 1fr;height:calc(100vh - 69px);}
 
 /* LEFT */
-.hero-l{display:flex;flex-direction:column;justify-content:center;padding:28px 40px;border-right:0.5px solid #e0dbd2;overflow:hidden;gap:20px;}
+.hero-l{display:flex;flex-direction:column;justify-content:flex-start;padding:32px 40px;border-right:0.5px solid #e0dbd2;overflow:hidden;gap:0;}
 
-.name{font-size:clamp(56px,7.5vw,110px);font-weight:900;color:#0d0d0d;line-height:0.85;letter-spacing:-0.03em;opacity:0;animation:fadeUp 0.7s 0.2s ease forwards;}
+.name{font-size:clamp(56px,7.5vw,110px);font-weight:900;color:#0d0d0d;line-height:0.85;letter-spacing:-0.03em;opacity:0;animation:fadeUp 0.7s 0.2s ease forwards;margin-bottom:16px;}
 
-.quote{font-size:13px;color:#888;font-style:italic;line-height:1.65;padding-left:12px;border-left:2px solid #c0392b;opacity:0;animation:fadeUp 0.6s 0.6s ease forwards;}
+.quote{font-size:13px;color:#888;font-style:italic;line-height:1.65;padding-left:12px;border-left:2px solid #c0392b;opacity:0;animation:fadeUp 0.6s 0.6s ease forwards;margin-bottom:32px;}
 
 .platforms{display:flex;flex-direction:column;gap:0;opacity:0;animation:fadeUp 0.6s 0.8s ease forwards;}
 .plat-link{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-top:0.5px solid #e0dbd2;font-size:12px;letter-spacing:0.2em;color:#999;text-decoration:none;transition:color 0.3s;font-weight:400;}
@@ -53,7 +53,7 @@ body{background:#f5f0e8;color:#0d0d0d;font-family:'Montserrat',sans-serif;-webki
 
 /* RIGHT — photo */
 .hero-r{position:relative;overflow:hidden;background:#111;}
-.hero-r img{width:100%;height:100%;object-fit:cover;object-position:30% center;display:block;animation:kenBurns 10s ease-out forwards;}
+.hero-r img{width:100%;height:100%;object-fit:contain;object-position:center center;display:block;animation:kenBurns 10s ease-out forwards;}
 .hero-r-fade{position:absolute;left:0;top:0;bottom:0;width:20%;background:linear-gradient(to right,#f5f0e8,transparent);z-index:1;}
 
 @keyframes kenBurns{from{transform:scale(1.06)}to{transform:scale(1)}}
@@ -99,14 +99,17 @@ body{background:#f5f0e8;color:#0d0d0d;font-family:'Montserrat',sans-serif;-webki
     </div>
     <div>
       <div class="platforms">
-        <a href="https://instagram.com/nox.lira" target="_blank" class="plat-link">
-          INSTAGRAM <span class="arr">→</span>
-        </a>
         <a href="https://x.com/LiraNox" target="_blank" class="plat-link">
           X / TWITTER <span class="arr">→</span>
         </a>
+        <a href="https://instagram.com/nox.lira" target="_blank" class="plat-link">
+          INSTAGRAM <span class="arr">→</span>
+        </a>
         <a href="https://reddit.com/user/LiraNox" target="_blank" class="plat-link">
           REDDIT <span class="arr">→</span>
+        </a>
+        <a href="https://fanvue.com/nox.lira" target="_blank" class="plat-link">
+          FANVUE <span class="arr">→</span>
         </a>
       </div>
       <div class="cta-wrap">
