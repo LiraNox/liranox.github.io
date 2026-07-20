@@ -27,21 +27,33 @@ body{background:#f5f0e8;color:#0d0d0d;font-family:'Montserrat',sans-serif;-webki
 .banner-line span{color:#c0392b;}
 .banner-18{background:#c0392b;padding:0 22px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#fff;letter-spacing:0.08em;flex-shrink:0;}
 
-/* ── HERO ── */
-.hero{display:grid;grid-template-columns:0.8fr 1.2fr;height:calc(100vh - 69px);}
+/* ── HERO — DESKTOP ── */
+.hero{
+  display:grid;
+  grid-template-columns:0.8fr 1.2fr;
+  grid-template-rows:auto 1fr;
+  grid-template-areas:"name photo" "content photo";
+  height:calc(100vh - 69px);
+}
 
-/* LEFT */
-.hero-l{display:flex;flex-direction:column;justify-content:flex-start;padding:32px 40px;border-right:none;overflow:hidden;gap:0;}
+.hero-name{
+  grid-area:name;
+  padding:32px 40px 16px;
+  opacity:0;
+  animation:fadeUp 0.7s 0.2s ease forwards;
+}
+.name{font-size:clamp(64px,8.5vw,130px);font-weight:900;color:#0d0d0d;line-height:0.85;letter-spacing:-0.03em;}
 
-.name{font-size:clamp(64px,8.5vw,130px);font-weight:900;color:#0d0d0d;line-height:0.85;letter-spacing:-0.03em;opacity:0;animation:fadeUp 0.7s 0.2s ease forwards;margin-bottom:20px;}
+.hero-content{
+  grid-area:content;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  padding:0 40px 32px;
+  overflow:hidden;
+}
 
-.quote{font-size:15px;color:#666;font-style:italic;line-height:1.7;padding-left:14px;border-left:2px solid #c0392b;opacity:0;animation:fadeUp 0.6s 0.6s ease forwards;margin-bottom:36px;}
-
-.platforms{display:flex;flex-direction:column;gap:0;opacity:0;animation:fadeUp 0.6s 0.8s ease forwards;}
-.plat-link{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-top:0.5px solid #e0dbd2;font-size:12px;letter-spacing:0.2em;color:#888;text-decoration:none;transition:color 0.3s;font-weight:500;}
-.plat-link:hover{color:#0d0d0d;}
-.plat-link .arr{color:#0d0d0d;font-size:18px;transition:transform 0.3s;}
-.plat-link:hover .arr{transform:translateX(4px);}
+.quote{font-size:15px;color:#666;font-style:italic;line-height:1.7;padding-left:14px;border-left:2px solid #c0392b;opacity:0;animation:fadeUp 0.6s 0.6s ease forwards;margin-bottom:32px;}
 
 .cta-wrap{opacity:0;animation:fadeUp 0.6s 1.0s ease forwards;}
 .cta-btn{display:block;background:#0d0d0d;color:#fff;font-size:13px;letter-spacing:0.4em;padding:16px 22px;font-weight:700;text-decoration:none;text-align:center;position:relative;overflow:hidden;transition:letter-spacing 0.4s;}
@@ -49,15 +61,21 @@ body{background:#f5f0e8;color:#0d0d0d;font-family:'Montserrat',sans-serif;-webki
 .cta-btn:hover::before{transform:translateX(0);}
 .cta-btn:hover{letter-spacing:0.6em;}
 .cta-btn-inner{position:relative;z-index:1;}
-.cta-sub{font-size:7px;letter-spacing:0.3em;color:#bbb;text-align:center;margin-top:6px;font-weight:300;}
 
 .perks{display:flex;flex-direction:column;gap:0;opacity:0;animation:fadeUp 0.6s 0.8s ease forwards;}
-.perk{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-top:0.5px solid #e0dbd2;font-size:16px;letter-spacing:0.15em;color:#333;font-weight:600;}
-.perk-dot{display:none;}
-.platforms{margin-top:28px;}
+.perk{display:flex;align-items:center;padding:14px 0;border-top:0.5px solid #e0dbd2;font-size:16px;letter-spacing:0.15em;color:#333;font-weight:600;}
+
+.platforms{display:flex;flex-direction:column;gap:0;margin-top:28px;opacity:0;animation:fadeUp 0.6s 0.8s ease forwards;}
+.plat-link{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-top:0.5px solid #e0dbd2;font-size:12px;letter-spacing:0.2em;color:#888;text-decoration:none;transition:color 0.3s;font-weight:500;}
+.plat-link:hover{color:#0d0d0d;}
+.plat-link .arr{color:#0d0d0d;font-size:18px;transition:transform 0.3s;}
+.plat-link:hover .arr{transform:translateX(4px);}
 
 /* RIGHT — photo */
-.hero-r{position:relative;overflow:hidden;
+.hero-r{
+  grid-area:photo;
+  position:relative;
+  overflow:hidden;
   background:#f5f0e8 url('images/hero.jpg') no-repeat;
   background-size:auto 100%;
   background-position:70% top;
@@ -65,7 +83,6 @@ body{background:#f5f0e8;color:#0d0d0d;font-family:'Montserrat',sans-serif;-webki
 .hero-r img{display:none;}
 .hero-r-fade{position:absolute;left:0;top:0;bottom:0;width:35%;background:linear-gradient(to right,#f5f0e8 0%,rgba(245,240,232,0.5) 60%,transparent 100%);z-index:1;}
 
-@keyframes kenBurns{from{transform:scale(1.06)}to{transform:scale(1)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 
 /* ── TICKER ── */
@@ -80,13 +97,22 @@ body{background:#f5f0e8;color:#0d0d0d;font-family:'Montserrat',sans-serif;-webki
   .banner-main{padding:11px 18px;}
   .banner-line{font-size:15px;}
   .banner-18{padding:0 14px;font-size:11px;}
-  .hero{grid-template-columns:1fr;height:auto;}
-  .hero-l{padding:22px 20px;border-right:none;border-bottom:0.5px solid #e0dbd2;order:2;}
-  .hero-r{height:85vw;order:1;}
+
+  .hero{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:auto auto;
+    grid-template-areas:"name photo" "content content";
+    height:auto;
+  }
+  .hero-name{padding:20px 16px 12px;}
+  .name{font-size:clamp(44px,13vw,64px);}
+  .hero-r{height:50vw;background-position:center top;background-size:auto 100%;}
   .hero-r-fade{display:none;}
-  .name{font-size:clamp(58px,17vw,80px);}
+  .hero-content{padding:20px 16px 28px;}
+  .quote{font-size:13px;margin-bottom:24px;}
+  .perk{font-size:13px;padding:12px 0;}
   .plat-link{padding:10px 0;}
-  .cta-btn{padding:14px;}
+  .cta-btn{padding:14px;font-size:11px;}
 }
 </style>
 </head>
@@ -101,41 +127,42 @@ body{background:#f5f0e8;color:#0d0d0d;font-family:'Montserrat',sans-serif;-webki
 </div>
 
 <section class="hero">
-  <div class="hero-l">
-    <div>
-      <div class="name">LIRA<br>NOX</div>
-      <div class="quote">There's a sound she makes<br>when the heel hits the floor.</div>
-    </div>
-    <div>
-      <div class="cta-wrap">
-        <a href="https://fanvue.com/nox.lira" target="_blank" class="cta-btn"
-           onclick="gtag('event','fanvue_click',{'event_category':'engagement','event_label':'hero_cta'});">
-          <span class="cta-btn-inner">PRIVATE ACCESS ON FANVUE →</span>
-        </a>
-      </div>
-      <div class="perks">
-        <div class="perk">WEEKLY DROPS — VIDEOS & PHOTOS</div>
-        <div class="perk">UNCENSORED. PRIVATE. YOURS.</div>
-        <div class="perk">TELL ME WHAT YOU WANT. I'LL MAKE IT.</div>
-      </div>
-      <div class="platforms">
-        <a href="https://x.com/LiraNox" target="_blank" class="plat-link">
-          X / TWITTER <span class="arr">→</span>
-        </a>
-        <a href="https://instagram.com/nox.lira" target="_blank" class="plat-link">
-          INSTAGRAM <span class="arr">→</span>
-        </a>
-        <a href="https://reddit.com/user/LiraNox" target="_blank" class="plat-link">
-          REDDIT <span class="arr">→</span>
-        </a>
-      </div>
-    </div>
+
+  <div class="hero-name">
+    <div class="name">LIRA<br>NOX</div>
   </div>
 
   <div class="hero-r">
     <img src="images/hero.jpg" alt="Lira Nox">
     <div class="hero-r-fade"></div>
   </div>
+
+  <div class="hero-content">
+    <div class="quote">There's a sound she makes<br>when the heel hits the floor.</div>
+    <div class="cta-wrap">
+      <a href="https://fanvue.com/nox.lira" target="_blank" class="cta-btn"
+         onclick="gtag('event','fanvue_click',{'event_category':'engagement','event_label':'hero_cta'});">
+        <span class="cta-btn-inner">PRIVATE ACCESS ON FANVUE →</span>
+      </a>
+    </div>
+    <div class="perks">
+      <div class="perk">WEEKLY DROPS — VIDEOS & PHOTOS</div>
+      <div class="perk">UNCENSORED. PRIVATE. YOURS.</div>
+      <div class="perk">TELL ME WHAT YOU WANT. I'LL MAKE IT.</div>
+    </div>
+    <div class="platforms">
+      <a href="https://x.com/LiraNox" target="_blank" class="plat-link">
+        X / TWITTER <span class="arr">→</span>
+      </a>
+      <a href="https://instagram.com/nox.lira" target="_blank" class="plat-link">
+        INSTAGRAM <span class="arr">→</span>
+      </a>
+      <a href="https://reddit.com/user/LiraNox" target="_blank" class="plat-link">
+        REDDIT <span class="arr">→</span>
+      </a>
+    </div>
+  </div>
+
 </section>
 
 <div class="ticker-wrap">
