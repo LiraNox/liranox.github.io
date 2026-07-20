@@ -51,6 +51,10 @@ body{background:#f5f0e8;color:#0d0d0d;font-family:'Montserrat',sans-serif;-webki
 .cta-btn-inner{position:relative;z-index:1;}
 .cta-sub{font-size:7px;letter-spacing:0.3em;color:#bbb;text-align:center;margin-top:6px;font-weight:300;}
 
+.perks{display:flex;flex-direction:column;gap:0;margin-top:32px;border-top:0.5px solid #e0dbd2;opacity:0;animation:fadeUp 0.6s 1.2s ease forwards;}
+.perk{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:0.5px solid #e0dbd2;font-size:9px;letter-spacing:0.3em;color:#999;font-weight:400;}
+.perk-dot{width:5px;height:5px;background:#c0392b;border-radius:50%;flex-shrink:0;}
+
 /* RIGHT — photo */
 .hero-r{position:relative;overflow:hidden;
   background:#f5f0e8 url('images/hero.jpg') no-repeat;
@@ -119,9 +123,14 @@ body{background:#f5f0e8;color:#0d0d0d;font-family:'Montserrat',sans-serif;-webki
       <div class="cta-wrap">
         <a href="https://fanvue.com/nox.lira" target="_blank" class="cta-btn"
            onclick="gtag('event','fanvue_click',{'event_category':'engagement','event_label':'hero_cta'});">
-          <span class="cta-btn-inner">PRIVATE ACCESS →</span>
+          <span class="cta-btn-inner">PRIVATE ACCESS ON FANVUE →</span>
         </a>
-        <div class="cta-sub">EXCLUSIVE · UNCENSORED · WEEKLY NEW CONTENT</div>
+        <div class="cta-sub">WEEKLY CONTENT · PRIVATE VIDEOS & PHOTOS · EXCLUSIVE</div>
+      </div>
+      <div class="perks">
+        <div class="perk"><span class="perk-dot"></span>NEUE VIDEOS & FOTOS JEDE WOCHE</div>
+        <div class="perk"><span class="perk-dot"></span>PRIVATE VIDEOS & FOTO-SETS</div>
+        <div class="perk"><span class="perk-dot"></span>DIREKTER KONTAKT · CUSTOM CONTENT</div>
       </div>
     </div>
   </div>
