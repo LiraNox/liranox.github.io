@@ -85,6 +85,21 @@ body{background:#f5f0e8;color:#0d0d0d;font-family:'Montserrat',sans-serif;-webki
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 
+/* ── PERK CTA ── */
+.perk-cta{cursor:pointer;transition:color 0.3s;}
+.perk-cta:hover{color:#c0392b;}
+
+/* ── MODAL ── */
+#tg-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:999;align-items:center;justify-content:center;}
+.tg-box{background:#f5f0e8;padding:48px 40px;max-width:420px;width:90%;position:relative;}
+.tg-close{position:absolute;top:16px;right:20px;font-size:20px;cursor:pointer;color:#888;background:none;border:none;font-family:inherit;}
+.tg-close:hover{color:#0d0d0d;}
+.tg-label{font-size:7px;letter-spacing:0.5em;color:#888;margin-bottom:20px;}
+.tg-title{font-size:18px;font-weight:900;letter-spacing:-0.01em;color:#0d0d0d;line-height:1.3;margin-bottom:12px;}
+.tg-sub{font-size:12px;color:#666;line-height:1.8;letter-spacing:0.05em;margin-bottom:32px;}
+.tg-btn{display:block;background:#0d0d0d;color:#fff;font-size:11px;letter-spacing:0.4em;padding:16px 22px;font-weight:700;text-decoration:none;text-align:center;}
+.tg-btn:hover{background:#c0392b;}
+
 /* ── TICKER ── */
 .ticker-wrap{overflow:hidden;border-top:0.5px solid #e0dbd2;border-bottom:0.5px solid #e0dbd2;padding:10px 0;background:#f5f0e8;}
 .ticker{white-space:nowrap;display:inline-block;animation:tick 28s linear infinite;}
@@ -148,7 +163,7 @@ body{background:#f5f0e8;color:#0d0d0d;font-family:'Montserrat',sans-serif;-webki
     <div class="perks">
       <div class="perk">WEEKLY DROPS — VIDEOS & PHOTOS</div>
       <div class="perk">UNCENSORED. PRIVATE. YOURS.</div>
-      <div class="perk">TELL ME WHAT YOU WANT. I'LL MAKE IT.</div>
+      <div class="perk perk-cta" onclick="document.getElementById('tg-modal').style.display='flex'">TELL ME WHAT YOU WANT. I'LL MAKE IT.</div>
     </div>
     <div class="platforms">
       <a href="https://x.com/LiraNox" target="_blank" class="plat-link">
@@ -179,6 +194,19 @@ body{background:#f5f0e8;color:#0d0d0d;font-family:'Montserrat',sans-serif;-webki
     <span>NOT FOR EVERYONE</span><span class="dot">·</span>
     <span>DEFINITELY FOR YOU</span><span class="dot">·</span>
     <span>PRIVATE ACCESS</span><span class="dot">·</span>
+  </div>
+</div>
+
+
+<script>window.addEventListener('load',function(){setTimeout(function(){document.getElementById('tg-modal').style.display='flex';},2500);});</script>
+
+<div id="tg-modal" onclick="if(event.target===this)this.style.display='none'">
+  <div class="tg-box">
+    <button class="tg-close" onclick="document.getElementById('tg-modal').style.display='none'">✕</button>
+    <div class="tg-label">PRIVATE REQUESTS</div>
+    <div class="tg-title">Tell me what you want.<br>I'll make it. Just for you.</div>
+    <div class="tg-sub">Custom photos & videos. Your idea, my execution.<br>Exclusive — never posted anywhere else.</div>
+    <a href="https://t.me/Lira_Nox_Official" target="_blank" class="tg-btn">→ &nbsp; REACH OUT ON TELEGRAM</a>
   </div>
 </div>
 
